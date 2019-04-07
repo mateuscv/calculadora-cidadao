@@ -1,4 +1,6 @@
 
+document.getElementById("calcular").onclick = submit_form;
+
 (function ($) {
     "use strict";
 
@@ -51,6 +53,10 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
+	
+	function submit_form() {
+		document.formulario_calc.submit();
+	}
     
     
 
