@@ -29,12 +29,10 @@ $(document).ready(function () {
                 }
             }
         }
-
         vp = parseFloat(vp);
-        tj = parseFloat(tj)/100.0;
+        tj = parseFloat(tj)/100.00000;
         periodo = parseFloat(periodo);
         vf = parseFloat(vf);
-
         if(cont>=2){
             window.alert("Devem haver apenas 3 valores, para que o campo em branco tenha seu valor calculado.");
         }
@@ -57,12 +55,11 @@ $(document).ready(function () {
                     break;
                 case"tj":
                     result = (Math.pow(vf / vp, 1 / periodo) - 1) * 100;
-                    result = parseFloat(result).toFixed(2);
+                    result = parseFloat(result).toFixed(5);
                     document.getElementById("tj_field").value = result.toString();
                     break;
                 case"periodo":
                     result = Math.ceil(Math.log(vf / vp) / Math.log(1 + tj));
-                    result = parseFloat(result).toFixed(2);
                     document.getElementById("periodo_field").value = result.toString();
                     break;
                 case"vf":
@@ -75,12 +72,10 @@ $(document).ready(function () {
                     break;
             }
         }
-        console.log(result);
     });
     $('#option1').click(function (){
         let vp_input_box = document.getElementById('vp_field');
         vp_input_box.placeholder = "Valor presente (R$)"
-        console.log("dsads ")
     });
     $('#option2').click(function (){
         let vp_input_box = document.getElementById('vp_field');
