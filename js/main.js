@@ -36,7 +36,7 @@ $(document).ready(function () {
         vf = parseFloat(vf);
 
         if(cont>=2){
-            window.alert(" Deve haver apenas 3 valores.");
+            window.alert("Devem haver apenas 3 valores, para que o campo em branco tenha seu valor calculado.");
         }
         else if (cont===0){
             window.alert(" Você deve inserir 3 dos valores, para calcular o 4º.");
