@@ -1,6 +1,4 @@
 
-document.getElementById("calcular").onclick = submit_form;
-
 (function ($) {
     "use strict";
 
@@ -53,11 +51,10 @@ document.getElementById("calcular").onclick = submit_form;
 
         $(thisAlert).removeClass('alert-validate');
     }
-	
-	function submit_form() {
-		document.formulario_calc.submit();
-	}
     
+	function getVals(input) {
+		console.log(input);
+	}
     
 
 })(jQuery);

@@ -30,7 +30,7 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form name="formulario_calc" "class="contact100-form validate-form">
+				<form class="contact100-form validate-form" method="post" action="js/main.js">
 					<span class="contact100-form-title">
 						Calculadora do Cidadão
 					</span>
@@ -38,9 +38,9 @@
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
 						<input class="input100" name="vp_field" type="number" pattern="[0-9]" placeholder="Valor presente (R$)"> 
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
+						<!--<span class="symbol-input100">
 							<i class="fa fa-money" aria-hidden="true"></i>
-						</span>
+						</span>-->
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
@@ -67,8 +67,8 @@
 						</span>-->
 					</div>
 
-					<div class="container-contact100-form-btn submit-form">
-						<button id="calcular" onclick="submit_form();" class="contact100-form-btn">
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn" onclick = "getVals(this);">
 							Calcular
 						</button>
 					</div>
