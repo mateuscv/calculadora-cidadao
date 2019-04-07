@@ -29,14 +29,12 @@ $(document).ready(function () {
                 }
             }
         }
-
-        vp = parseFloat(vp)
-        tj = parseFloat(tj)
-        periodo = parseFloat(periodo)
-        vf = parseFloat(vf)
-
+        vp = parseFloat(vp);
+        tj = parseFloat(tj)/100.00000;
+        periodo = parseFloat(periodo);
+        vf = parseFloat(vf);
         if(cont>=2){
-            window.alert(" Deve haver apenas 3 valores.");
+            window.alert("Devem haver apenas 3 valores, para que o campo em branco tenha seu valor calculado.");
         }
         else if (cont===0){
             window.alert(" Você deve inserir 3 dos valores, para calcular o 4º.");
@@ -44,80 +42,43 @@ $(document).ready(function () {
         else {
             switch (vazio) {
                 case"vp":
-                    result = vf / (Math.pow((1 + tj), periodo));
+                    if(document.getElementById('vp_field').placeholder==="Valor uniforme (R$)"){
+                        result = vf/(Math.pow(1+tj,periodo)-1);
+                        result = parseFloat(result).toFixed(2);
+                        document.getElementById("vp_field").value = result.toString();
+                    }
+                    else {
+                        result = vf / (Math.pow((1 + tj), periodo));
+                        result = parseFloat(result).toFixed(2);
+                        document.getElementById("vp_field").value = result.toString();
+                    }
                     break;
                 case"tj":
                     result = (Math.pow(vf / vp, 1 / periodo) - 1) * 100;
+                    result = parseFloat(result).toFixed(5);
+                    document.getElementById("tj_field").value = result.toString();
                     break;
                 case"periodo":
                     result = Math.ceil(Math.log(vf / vp) / Math.log(1 + tj));
+                    document.getElementById("periodo_field").value = result.toString();
                     break;
                 case"vf":
                     result = vp * Math.pow((1 + tj), periodo);
+                    result = parseFloat(result).toFixed(2);
+                    document.getElementById("vf_field").value = result.toString();
                     break;
                 default:
                     result = 0;
                     break;
             }
         }
-        console.log(result);
-    })
+    });
+    $('#option1').click(function (){
+        let vp_input_box = document.getElementById('vp_field');
+        vp_input_box.placeholder = "Valor presente (R$)"
+    });
+    $('#option2').click(function (){
+        let vp_input_box = document.getElementById('vp_field');
+        vp_input_box.placeholder = "Valor uniforme (R$)"
+    });
 });
-
-
-/*(function ($) {
-    "use strict";
-
-    
-    /*==================================================================
-    [ Validate ]
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        return check;
-    });
-
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
-
-    function validate (input) {
-        if($(input).val().trim() == ''){
-            return false;
-        
-        }
-        /*else {
-            ($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-                if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                    return false;
-                }
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    
-
-})(jQuery)*/

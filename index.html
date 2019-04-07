@@ -27,7 +27,7 @@
 		<div class="container-contact100">
 			<div class="wrap-contact100">
 				<div class="contact100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
+					<img src="images/img-01.jpg" alt="IMG">
 				</div>
 
 				<form class="contact100-form validate-form" onsubmit="return false" id="formID">
@@ -35,42 +35,58 @@
 						Calculadora do Cidadão
 					</span>
 
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" id="option1" class="btn btn-secondary">Valor Presente</button>
+						<button type="button" id="option2" class="btn btn-secondary">Valor Uniforme</button>
+					</div>
+					<p>
+						<br>
+					</p>
+
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
 						<input class="input100" name="vp_field" id="vp_field" type="text" placeholder="Valor presente (R$)"> 
 						<span class="focus-input100"></span>
-						<!--<span class="symbol-input100">
+						<span class="symbol-input100">
 							<i class="fa fa-money" aria-hidden="true"></i>
-						</span>-->
+						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
-						<input class="input100" name="tj_field" id="tj_field" type="text" placeholder="Taxa de juros (%)"> 
+						<input class="input100" name="tj_field" id="tj_field" type="text" placeholder="Taxa de juros (%)" pattern="[0-9]+([\.][0-9]+)?">
 						<span class="focus-input100"></span>
-						<!--<span class="symbol-input100">
-							<i class="fa fa-money" aria-hidden="true"></i>
-						</span>-->
+						<span class="symbol-input100">
+							<i class="fa fa-percent" aria-hidden="true"></i>
+						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
 						<input class="input100" name="periodo_field" id="periodo_field" type="text" placeholder="Período (meses)"> 
 						<span class="focus-input100"></span>
-						<!--<span class="symbol-input100">
-							<i class="fa fa-money" aria-hidden="true"></i>
-						</span>-->
+						<span class="symbol-input100">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Campo obrigatório!">
 						<input class="input100" name="vf_field" id="vf_field" type="text" placeholder="Valor Futuro (R$)"> 
 						<span class="focus-input100"></span>
-						<!--<span class="symbol-input100">
-							<i class="fa fa-money" aria-hidden="true"></i>
-						</span>-->
+						<span class="symbol-input100">
+							<i class="fa fa-stack-overflow" aria-hidden="true"></i>
+						</span>
 					</div>
 
 					<div class="container-contact100-form-btn">
 						<button class="contact100-form-btn" id="BotaoID" >
 							Calcular
 						</button>
+					</div>
+
+					<div>
+						<p>
+							<br>
+							<b>Uso</b>: Preencha 3 campos, deixando em branco o valor que você deseja calcular.
+							<br><b>Por favor, utilize o ponto (.) para separação decimal.</b>
+						</p>
 					</div>
 				</form>
 			</div>
@@ -82,10 +98,9 @@
 	<script  src="js/jquery.mask.min.js"></script>
 	<script>
 	$ (document).ready(function(){
-		$("#vp_field").mask("999.999.990,00", {reverse: true})
-		$("#tj_field").mask("00000000000000", {reverse: true})
-		$("#periodo_field").mask("00000000000000", {reverse: true})
-		$("#vf_field").mask("999.999.990,00", {reverse: true})
+		$("#vp_field").mask("999,999,990.00", {reverse: true});
+		$("#periodo_field").mask("00000000000000", {reverse: true});
+		$("#vf_field").mask("999,999,990.00", {reverse: true});
 	})
 	</script>
 <!--===============================================================================================-->
