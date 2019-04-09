@@ -1,3 +1,5 @@
 Webpage baseada na calculadora do cidadão fornecida pelo Banco Central do Brasil, desenvolvida para a disciplina de Economia no curso de Engenharia de Computação da Universidade Federal do Rio Grande, em 2019.
 
-http://calculadoradocidadao.epizy.com
+Desenvolvida por Igor O. Sousa, Mateus C. Vieira e Thayllor dos Santos.
+
+mateuscv.github.io/calculadora-cidadao
