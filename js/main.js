@@ -43,7 +43,7 @@ $(document).ready(function () {
             switch (vazio) {
                 case"vp":
                     if(document.getElementById('vp_field').placeholder==="Valor uniforme (R$)"){
-                        result = vf/(Math.pow(1+tj,periodo)-1);
+                        result = vf * ((Math.pow((1+tj), periodo)*periodo)/(Math.pow((1+tj),periodo)-1));
                         result = parseFloat(result).toFixed(2);
                         document.getElementById("vp_field").value = result.toString();
                     }
@@ -76,9 +76,13 @@ $(document).ready(function () {
     $('#option1').click(function (){
         let vp_input_box = document.getElementById('vp_field');
         vp_input_box.placeholder = "Valor presente (R$)"
+        let vf_input_box = document.getElementById('vf_field');
+        vf_input_box.placeholder = "Valor futuro (R$)"
     });
     $('#option2').click(function (){
         let vp_input_box = document.getElementById('vp_field');
         vp_input_box.placeholder = "Valor uniforme (R$)"
+        let vf_input_box = document.getElementById('vf_field');
+        vf_input_box.placeholder = "Valor financiado (R$)"
     });
 });
