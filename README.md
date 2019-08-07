@@ -1,4 +1,4 @@
-EN-US: This is a webpage developed as a group assignment for the "Economics" course in Computer Engineering. It's an implementation of a specific financial calculator available in Brazil for citizens to use freely, originally provided by the Central Bank of Brazil. 
+EN: This is a webpage developed as a group assignment for the "Economics" course in Computer Engineering. It's an implementation of a specific financial calculator available in Brazil for citizens to use freely, originally provided by the Central Bank of Brazil. 
 
 PT-BR: Webpage baseada na calculadora do cidadão fornecida pelo Banco Central do Brasil, desenvolvida para a disciplina de Economia no curso de Engenharia de Computação da Universidade Federal do Rio Grande, em 2019.
 
